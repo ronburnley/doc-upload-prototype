@@ -118,8 +118,8 @@ const DocumentUploadPage: React.FC = () => {
     <div className="min-h-screen py-8 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto bg-white file-upload-container">
         <div className="bg-gradient-to-r from-gray-800 to-black py-4 px-6">
-          <h1 className="text-xl font-bold text-white">Document Upload</h1>
-          <p className="text-gray-300 mt-1 text-xs">Secure file upload with preview</p>
+          <h1 className="text-xl font-bold text-white">Document Upload Center</h1>
+          <p className="text-gray-300 mt-1 text-xs">Upload documentation for your enrollment here</p>
         </div>
 
         <div className="p-6">
