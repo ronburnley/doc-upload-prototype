@@ -117,9 +117,9 @@ const DocumentUploadPage: React.FC = () => {
   return (
     <div className="min-h-screen py-8 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto bg-white file-upload-container">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-6">
+        <div className="bg-gradient-to-r from-gray-800 to-black py-4 px-6">
           <h1 className="text-xl font-bold text-white">Document Upload</h1>
-          <p className="text-blue-100 mt-1 text-xs">Secure file upload with preview</p>
+          <p className="text-gray-300 mt-1 text-xs">Secure file upload with preview</p>
         </div>
 
         <div className="p-6">
@@ -127,8 +127,8 @@ const DocumentUploadPage: React.FC = () => {
           <div 
             className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer mb-5 transition-all duration-200
               ${isDragging 
-                ? 'dropzone-active' 
-                : 'border-gray-200 hover:border-blue-400 hover:bg-gray-50'}`}
+                ? 'border-gray-700 bg-gray-100 shadow-inner' 
+                : 'border-gray-200 hover:border-gray-600 hover:bg-gray-50'}`}
             onDragEnter={handleDragEnter}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -136,13 +136,13 @@ const DocumentUploadPage: React.FC = () => {
             onClick={handleButtonClick}
           >
             <div className="flex flex-col items-center">
-              <svg className="w-12 h-12 text-blue-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-12 h-12 text-gray-700 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
               </svg>
               <p className="text-lg font-medium text-gray-700 mb-1">Drag and drop files here</p>
               <p className="text-sm text-gray-500 mb-4">or</p>
               <button 
-                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition-colors text-sm shadow-sm hover:shadow" 
+                className="bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded transition-colors text-sm shadow-sm hover:shadow" 
                 type="button"
               >
                 Browse Files
@@ -163,7 +163,7 @@ const DocumentUploadPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow border border-gray-100 overflow-hidden">
               <div className="bg-gray-50 px-4 py-3 border-b border-gray-100">
                 <h2 className="text-sm font-medium text-gray-700 flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 mr-2 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                   </svg>
                   Uploaded Files ({files.length})
@@ -175,8 +175,8 @@ const DocumentUploadPage: React.FC = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3 flex-1 min-w-0">
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 rounded bg-blue-100 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
                           </div>
@@ -190,7 +190,7 @@ const DocumentUploadPage: React.FC = () => {
                             <div className="w-full bg-gray-200 rounded-full h-1.5">
                               <div 
                                 className={`h-1.5 rounded-full upload-progress-bar ${
-                                  uploadProgress[file.name] === 100 ? 'bg-green-500' : 'bg-blue-500'
+                                  uploadProgress[file.name] === 100 ? 'bg-gray-800' : 'bg-gray-600'
                                 }`}
                                 style={{ width: `${uploadProgress[file.name]}%` }}
                               ></div>
@@ -200,7 +200,7 @@ const DocumentUploadPage: React.FC = () => {
                             </span>
                           </div>
                           <div className="mt-1">
-                            <span className={`text-xs ${uploadProgress[file.name] === 100 ? 'text-green-600' : 'text-blue-600'}`}>
+                            <span className={`text-xs ${uploadProgress[file.name] === 100 ? 'text-gray-800' : 'text-gray-600'}`}>
                               {uploadProgress[file.name] < 100 ? 'Uploading...' : 'Complete'}
                             </span>
                           </div>
@@ -229,7 +229,7 @@ const DocumentUploadPage: React.FC = () => {
                   Clear All
                 </button>
                 <button 
-                  className="bg-blue-500 text-white text-xs font-medium py-1.5 px-3 rounded hover:bg-blue-600 transition-colors"
+                  className="bg-black text-white text-xs font-medium py-1.5 px-3 rounded hover:bg-gray-800 transition-colors"
                 >
                   Upload
                 </button>
@@ -239,7 +239,7 @@ const DocumentUploadPage: React.FC = () => {
           
           {/* Help text */}
           <div className="text-center text-gray-500 text-xs mt-4">
-            <p>Need help? <a href="#" className="text-blue-500 hover:underline">Contact support</a></p>
+            <p>Need help? <a href="#" className="text-gray-700 hover:text-black hover:underline">Contact support</a></p>
           </div>
         </div>
       </div>
