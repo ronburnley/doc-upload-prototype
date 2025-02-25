@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f5f8fc;
+}
+
+/* Custom styling for the file upload component */
+.file-upload-container {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dropzone-active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.upload-progress-bar {
+  transition: width 0.3s ease-in-out;
+}
