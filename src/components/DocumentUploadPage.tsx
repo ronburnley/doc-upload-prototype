@@ -200,9 +200,13 @@ const DocumentUploadPage: React.FC = () => {
                             </span>
                           </div>
                           <div className="mt-1">
-                            <span className={`text-xs ${uploadProgress[file.name] === 100 ? 'text-gray-800' : 'text-gray-600'}`}>
-                              {uploadProgress[file.name] < 100 ? 'Uploading...' : 'Complete'}
-                            </span>
+                            {uploadProgress[file.name] < 100 ? (
+                              <span className="text-xs text-gray-600">Uploading...</span>
+                            ) : (
+                              <span className="text-xs text-gray-600">
+                                <span className="text-green-600 font-medium">Complete</span>
+                              </span>
+                            )}
                           </div>
                         </div>
                       </div>
